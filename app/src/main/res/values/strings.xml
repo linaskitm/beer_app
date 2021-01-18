@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Beer</string>
+    <string name="app_title">Beer App</string>
+
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_checkbox">Remember me</string>
+    <string name="login_login_btn">Login</string>
+    <string name="login_register_btn">Register</string>
+    <string name="login_invalid_credentials_message">Wrong! username or password</string>
+    <string name="set_email">Email</string>
+    <string name="invalid_email">Wrong Email</string>
+    <string name="new_user">Created New User</string>
+    <string name="search_loading_data">Please wait for Beer data to be displayed</string>
+    <string name="search_error_reading_data">Couldnt read data from API. For more information: </string>
+    <string name="search_no_results">No search results found for query: </string>
+    <string name="search_found_entries_from_api">Found total number of beers entries: </string>
+
+</resources>

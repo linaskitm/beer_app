@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/drinkName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Coctail"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/drinkTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="5dp"
+        android:text="Tags"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/drinkCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="5dp"
+        android:text="Category"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/drinkGlass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinkName"
+        android:layout_marginLeft="5dp"
+        android:text="Glass"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorLightPink" />
+
+    <TextView
+        android:id="@+id/drinkIngredient1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinkGlass"
+        android:layout_marginLeft="10dp"
+        android:text="Ingriedient"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorLightPink" />
+    <TextView
+        android:id="@+id/drinkIngredient2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinkIngredient1"
+        android:layout_marginLeft="10dp"
+        android:text="Ingriedient"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorLightPink" />
+    <TextView
+        android:id="@+id/drinkIngredient3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinkIngredient2"
+        android:layout_marginLeft="10dp"
+        android:text="Ingriedient"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorLightPink" />
+
+</RelativeLayout>
