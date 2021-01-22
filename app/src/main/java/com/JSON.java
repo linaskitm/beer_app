@@ -29,7 +29,8 @@ public class JSON {
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
             String jsonText = readAll(rd);
-            JSONObject json = new JSONObject(jsonText);
+            String jsonText2 = "{"+"\"beers\":"+jsonText + "}";
+            JSONObject json = new JSONObject(jsonText2);
             return json;
         } finally {
             is.close();
@@ -38,40 +39,38 @@ public class JSON {
     public static JSONArray getJSONArray(JSONObject json) throws JSONException {
 
         //JSONObject to JSONArray
-        JSONArray jsonArray = json.getJSONArray("drinks");
+        JSONArray jsonArray = json.getJSONArray("beers");
 
         return jsonArray;
     }
 
-    public static ArrayList<Coctail> getList(JSONArray jsonArray) throws JSONException {
-        ArrayList<Coctail> coctailsList = new ArrayList<Coctail>();
+    public static ArrayList<Beer> getList(JSONArray jsonArray) throws JSONException {
+        ArrayList<Beer> beersList = new ArrayList<Beer>();
         // Extract data from json and store into ArrayList as class objects
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject json_data = jsonArray.getJSONObject(i);
-            Coctail coctail = new Coctail(
-                    json_data.getString("idDrink"),
-                    json_data.getString("strDrink"),
-                    json_data.getString("strAlcoholic"),
-                    json_data.getString("strCategory"),
-                    json_data.getString("strGlass"),
-                    json_data.getString("strIngredient1"),
-                    json_data.getString("strIngredient2"),
-                    json_data.getString("strIngredient3")
+            Beer beer = new Beer(
+                    json_data.getString("id"),
+                    json_data.getString("name"),
+                    json_data.getString("tagline"),
+                    json_data.getString("first_brewed"),
+                    json_data.getString("description")
+
             );
-            coctailsList.add(coctail);
+            beersList.add(beer);
         }
-        return coctailsList;
+        return beersList;
     }
 
-    public static ArrayList<Coctail> getCoctailListByName(ArrayList<Coctail> coctailsList, String drinkName) {
+    public static ArrayList<Beer> getCoctailListByName(ArrayList<Beer> coctailsList, String drinkName) {
         drinkName= drinkName.substring(0,1).toUpperCase() + drinkName.substring(1).toLowerCase();
-        ArrayList<Coctail> coctailListByName = new ArrayList<Coctail>();
-        for (Coctail coctail : coctailsList) {
-            if (coctail.getDrinkName().contains(drinkName)) {
-                coctailListByName.add(coctail);
+        ArrayList<Beer> beerListByName = new ArrayList<Beer>();
+        for (Beer beer : coctailsList) {
+            if (beer.getDrinkName().contains(drinkName)) {
+                beerListByName.add(beer);
             }
         }
-        return coctailListByName;
+        return beerListByName;
     }
 
 }

@@ -24,12 +24,12 @@ import java.util.ArrayList;
 
 
 public class SearchActivity extends AppCompatActivity {
-    public static final String COCTAIL_API = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+    public static final String BEER_API = "https://api.punkapi.com/v2/beers/";
 
     private RecyclerView recyclerView;
     private Adapter adapter;
 
-    private ArrayList<Coctail> coctailArrayList = new ArrayList<Coctail>();
+    private ArrayList<Beer> beerArrayList = new ArrayList<Beer>();
 
     SearchView searchView = null;
 
@@ -77,20 +77,20 @@ public class SearchActivity extends AppCompatActivity {
                 searchView.clearFocus();
             }
             // From all  list creates specific list by searched name
-            ArrayList<Coctail> coctailListByName = JSON.getCoctailListByName(coctailArrayList, query);
+            ArrayList<Beer> coctailListByName = JSON.getCoctailListByName(beerArrayList, query);
 
             if (coctailListByName.size() == 0) {
                 Toast.makeText(this, getResources().getString(R.string.search_no_results) + query, Toast.LENGTH_SHORT).show();
             }
             // Setup and Handover data to recyclerview
-            recyclerView = (RecyclerView) findViewById(R.id.coctail_list);
+            recyclerView = (RecyclerView) findViewById(R.id.beer_list);
             adapter = new Adapter(SearchActivity.this, coctailListByName);
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
         }
     }
 
-    private class AsyncFetch extends AsyncTask<String, String, ArrayList<Coctail>> {
+    private class AsyncFetch extends AsyncTask<String, String, ArrayList<Beer>> {
         ProgressDialog pdLoading = new ProgressDialog(SearchActivity.this);
 
         @Override
@@ -102,16 +102,16 @@ public class SearchActivity extends AppCompatActivity {
             pdLoading.show();
         }
         @Override
-        protected ArrayList<Coctail> doInBackground(String... params) {
+        protected ArrayList<Beer> doInBackground(String... params) {
             try {
-                JSONObject jsonObject = JSON.readJsonFromUrl(COCTAIL_API);
+                JSONObject jsonObject = JSON.readJsonFromUrl(BEER_API);
 
                     JSONArray jsonArray = null;
-                    coctailArrayList = new ArrayList<Coctail>();
+                    beerArrayList = new ArrayList<Beer>();
                     try {
                         jsonArray = JSON.getJSONArray(jsonObject);
-                        coctailArrayList = JSON.getList(jsonArray);
-                        System.out.println(coctailArrayList);
+                        beerArrayList = JSON.getList(jsonArray);
+                        System.out.println(beerArrayList);
                     } catch (JSONException e) {
                         Toast.makeText(
                                 SearchActivity.this,
@@ -119,7 +119,7 @@ public class SearchActivity extends AppCompatActivity {
                                 Toast.LENGTH_LONG
                         ).show();
                     }
-                    return coctailArrayList;
+                    return beerArrayList;
             } catch (JSONException | IOException e1) {
                 Toast.makeText(
                         SearchActivity.this,
@@ -131,12 +131,12 @@ public class SearchActivity extends AppCompatActivity {
         }// doInBackground
 
         @Override
-        protected void onPostExecute(ArrayList<Coctail> coctailArrayList) {
+        protected void onPostExecute(ArrayList<Beer> beerArrayList) {
             //this method will be running on UI thread
             pdLoading.dismiss();
 
-            if (coctailArrayList != null) {
-                Toast.makeText(SearchActivity.this, getResources().getString(R.string.search_found_entries_from_api) + coctailArrayList.size(), Toast.LENGTH_SHORT).show();
+            if (beerArrayList != null) {
+                Toast.makeText(SearchActivity.this, getResources().getString(R.string.search_found_entries_from_api) + beerArrayList.size(), Toast.LENGTH_SHORT).show();
             }
         }//onPostExecute
     }//AsyncFetch class
