@@ -1,6 +1,8 @@
 package com;
 
-public class Beer {
+import java.io.Serializable;
+
+public class Beer implements Serializable {
     private String drinkId;
     private String drinkName;
     private String drinkTagline;
@@ -9,6 +11,13 @@ public class Beer {
 
     public Beer(String drinkId, String drinkName, String drinkTagline, String drinkDescription, String drinkFirstBrewed) {
         this.drinkId = drinkId;
+        this.drinkName = drinkName;
+        this.drinkTagline = drinkTagline;
+        this.drinkDescription = drinkDescription;
+        this.drinkFirstBrewed = drinkFirstBrewed;
+    }
+
+    public Beer(String drinkName, String drinkTagline, String drinkDescription, String drinkFirstBrewed) {
         this.drinkName = drinkName;
         this.drinkTagline = drinkTagline;
         this.drinkDescription = drinkDescription;

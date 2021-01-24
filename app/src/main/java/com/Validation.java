@@ -40,5 +40,13 @@ public class Validation {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+    public static final String NUMBER_REGEX_PATTERN = "^[0-9]{1,8}$";
+
+    public static boolean isValidNumber(String number) {
+        Pattern pattern = Pattern.compile(NUMBER_REGEX_PATTERN);
+        Matcher matcher = pattern.matcher(number);
+        return matcher.matches();
+    }
+
 
 }

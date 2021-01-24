@@ -16,4 +16,28 @@
     <string name="search_no_results">No search results found for query: </string>
     <string name="search_found_entries_from_api">Found total number of beers entries: </string>
 
+    <string name="new_entry_country">Counrty: </string>
+    <string name="new_entry_lithuania">Lithuania</string>
+    <string name="new_entry_latvia">Latvia</string>
+    <string name="new_entry_estonia">Estonia</string>
+    <string name="new_entry_poland">Poland</string>
+
+    <string name="new_entry_deaths">Deaths: </string>
+    <string name="new_entry_deaths_100">100</string>
+    <string name="new_entry_deaths_500">500</string>
+    <string name="new_entry_deaths_1000">1000</string>
+    <string name="new_entry_deaths_2000">2000</string>
+    <string name="new_entry_last_update">Last Update: </string>
+    <string name="new_entry_last_update_date">2020-12-21</string>
+
+    <string name ="new_entry_date1">2020-12-21</string>
+    <string name ="new_entry_date2">2020-12-20</string>
+    <string name ="new_entry_date3">2020-12-19</string>
+    <string name ="new_entry_date4">2020-12-18</string>
+
+    <string name="new_entry_confirm">Confirm: </string>
+    <string name="new_entry_btn">Displayd selected data</string>
+    <string name="new_entry_invalid_confirmed">Wrong confirmed number</string>
+
+
 </resources>

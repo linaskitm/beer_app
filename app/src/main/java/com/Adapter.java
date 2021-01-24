@@ -2,6 +2,7 @@ package com;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,14 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private LayoutInflater inflater;
     List<Beer> data;
+    public static final String ENTRY = "com.ENTRY";// raktas
 
     // create constructor to initialize context and data sent from SearchActivity
     public Adapter(Context context, List<Beer> data) {
@@ -73,7 +76,13 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         // Click event for all items
         @Override
         public void onClick(View v) {
-            Toast.makeText(context, "You clicked an item " , Toast.LENGTH_SHORT).show();
+            // Intention to go in newEntry window                       from     --------->   to
+            Intent goToNewEntryActivity = new Intent(context, NewEntryActivity.class);
+            int itemPosition = getAdapterPosition();// grazina konkrecia kortele
+            Beer beer = data.get(itemPosition);
+            goToNewEntryActivity.putExtra(ENTRY, (Serializable) beer);
+            // going to newEntry window, action.
+            context.startActivity(goToNewEntryActivity);
         }
     }
 }
