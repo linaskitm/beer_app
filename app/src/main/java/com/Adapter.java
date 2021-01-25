@@ -43,8 +43,8 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Beer current = data.get(position);
         myHolder.drinkName.setText(current.getDrinkName());
         myHolder.drinkTagline.setText(current.getDrinkTagline());
-        myHolder.drinkFirstBrewed.setText("First Brewed: " + current.getDrinkFirstBrewed());
-        myHolder.drinkDescription.setText("Description: " + current.getDrinkDescription());
+        myHolder.drinkFirstBrewed.setText("First Brewed: " + current.getDrinkDescription());
+        myHolder.drinkDescription.setText("Description: " + current.getDrinkFirstBrewed());
 
 
     }

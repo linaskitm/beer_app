@@ -69,13 +69,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/new_entry_tagline_1"
-            android:checked="true"/>
+            />
 
         <RadioButton
             android:id="@+id/radio2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_entry_tagline_2"/>
+            android:text="@string/new_entry_tagline_2"
+            android:checked="true"/>
 
         <RadioButton
             android:layout_width="match_parent"

@@ -30,13 +30,13 @@ public class NewEntryActivity extends AppCompatActivity {
         Toast.makeText(this, "Beers: " + beer.getDrinkName(), Toast.LENGTH_SHORT).show();
 
         // pasiimsim visus elementus is xml
-        final CheckBox checkBoxLithuania = findViewById(R.id.beer_pilsner);
-        final CheckBox checkBoxLatvia = findViewById(R.id.beer_bohamian);
-        final CheckBox checkBoxEstonia = findViewById(R.id.beer_belgian);
-        final CheckBox checkBoxPoland = findViewById(R.id.beer_buzz);
+        final CheckBox checkBoxPlisner = findViewById(R.id.beer_pilsner);
+        final CheckBox checkBoxBohamian = findViewById(R.id.beer_bohamian);
+        final CheckBox checkBoxBelgian = findViewById(R.id.beer_belgian);
+        final CheckBox checkBoxBuzz = findViewById(R.id.beer_buzz);
 
         final RadioGroup radioGroup = findViewById(R.id.radio_group);
-        final RadioButton radio500 = findViewById(R.id.radio2);
+        final RadioButton radio2 = findViewById(R.id.radio2);
 
         final Spinner spinner = findViewById(R.id.first_brewed_id);
         ArrayList <String> updateList = new ArrayList<String>();
@@ -62,8 +62,8 @@ public class NewEntryActivity extends AppCompatActivity {
 
         // uzpildysime visus elementus alaus informacija
 
-        checkBoxLithuania.setText(beer.getDrinkName());
-        radio500.setText(beer.getDrinkTagline());
+        checkBoxPlisner.setText(beer.getDrinkName());
+        radio2.setText(beer.getDrinkTagline());
         editTextDescription.setText(beer.getDrinkDescription());
 
         // ant mygtuko paspaudimo parodysime vartotojo ivesta- koreguota informacija
@@ -72,17 +72,17 @@ public class NewEntryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String beers = "";
-                if(checkBoxLithuania.isChecked()) {
-                    beers+= checkBoxLithuania.getText().toString() + ", ";
+                if(checkBoxPlisner.isChecked()) {
+                    beers+= checkBoxPlisner.getText().toString() + ", ";
                 }
-                if(checkBoxLatvia.isChecked()) {
-                    beers+= checkBoxLatvia.getText().toString() + ", ";
+                if(checkBoxBohamian.isChecked()) {
+                    beers+= checkBoxBohamian.getText().toString() + ", ";
                 }
-                if(checkBoxEstonia.isChecked()) {
-                    beers+= checkBoxEstonia.getText().toString() + ", ";
+                if(checkBoxBelgian.isChecked()) {
+                    beers+= checkBoxBelgian.getText().toString() + ", ";
                 }
-                if(checkBoxPoland.isChecked()) {
-                    beers+= checkBoxPoland.getText().toString() + " ";
+                if(checkBoxBuzz.isChecked()) {
+                    beers+= checkBoxBuzz.getText().toString() + " ";
                 }
 
                 //gauname pasirinta radio buttona is radio groupo
