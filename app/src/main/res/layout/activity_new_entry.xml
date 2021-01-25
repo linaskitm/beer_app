@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorYellow"
     android:padding="10dp">
   <ScrollView
       android:layout_width="match_parent"
@@ -16,36 +16,36 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_country"
+          android:text="@string/new_entry_beer"
           android:textColor="@color/colorWhite"/>
       <Space
           android:layout_width="match_parent"
           android:layout_height="10dp"/>
 
       <CheckBox
-          android:id="@+id/counrty_lithuania"
+          android:id="@+id/beer_pilsner"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_lithuania"
+          android:text="@string/new_entry_pilsen_lager"
           android:checked="true"/>
 
       <CheckBox
-          android:id="@+id/counrty_latvia"
+          android:id="@+id/beer_bohamian"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_latvia"/>
+          android:text="@string/new_entry_bohemian_pilsner"/>
 
       <CheckBox
-          android:id="@+id/counrty_estonia"
+          android:id="@+id/beer_belgian"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_estonia"/>
+          android:text="@string/new_entry_belgian_ale"/>
 
       <CheckBox
-          android:id="@+id/counrty_poland"
+          android:id="@+id/beer_buzz"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_poland"/>
+          android:text="@string/new_entry_buzz"/>
       <Space
           android:layout_width="match_parent"
           android:layout_height="10dp"/>
@@ -54,7 +54,7 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_deaths"
+          android:text="@string/new_entry_tagline"
           android:textColor="@color/colorWhite"/>
       <Space
           android:layout_width="match_parent"
@@ -68,24 +68,24 @@
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_entry_deaths_100"
+            android:text="@string/new_entry_tagline_1"
             android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/radio500"
+            android:id="@+id/radio2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_entry_deaths_500"/>
+            android:text="@string/new_entry_tagline_2"/>
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_entry_deaths_1000"/>
+            android:text="@string/new_entry_tagline_3"/>
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_entry_deaths_2000"/>
+            android:text="@string/new_entry_tagline_4"/>
 
       </RadioGroup>
       <Space
@@ -95,14 +95,14 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_last_update"
+          android:text="@string/new_entry_first_brewed"
           android:textColor="@color/colorWhite"/>
       <Space
           android:layout_width="match_parent"
           android:layout_height="10dp"/>
 
       <Spinner
-          android:id="@+id/last_updated_id"
+          android:id="@+id/first_brewed_id"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           />
@@ -113,13 +113,13 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/new_entry_confirm"
+          android:text="@string/new_entry_description"
           android:textColor="@color/colorWhite"/>
       <EditText
-          android:id="@+id/confirmed_input"
+          android:id="@+id/description_input"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:inputType="number"/>
+          android:inputType="text"/>
       <Space
           android:layout_width="match_parent"
           android:layout_height="10dp"/>

@@ -42,9 +42,10 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         MyHolder myHolder = (MyHolder) holder;
         Beer current = data.get(position);
         myHolder.drinkName.setText(current.getDrinkName());
-        myHolder.drinkTagline.setText("Type: " + current.getDrinkDescription());
-        myHolder.drinkDescription.setText("Category: " + current.getDrinkFirstBrewed());
-        myHolder.drinkFirstBrewed.setText(current.getDrinkTagline());
+        myHolder.drinkTagline.setText(current.getDrinkTagline());
+        myHolder.drinkFirstBrewed.setText("First Brewed: " + current.getDrinkFirstBrewed());
+        myHolder.drinkDescription.setText("Description: " + current.getDrinkDescription());
+
 
     }
 
@@ -58,17 +59,19 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView drinkName;
         TextView drinkTagline;
-        TextView drinkDescription;
         TextView drinkFirstBrewed;
+        TextView drinkDescription;
+
 
 
         // create constructor to get widget reference
         public MyHolder(View itemView) {
             super(itemView);
             drinkName = (TextView) itemView.findViewById(R.id.drinkName);
-            drinkTagline = (TextView) itemView.findViewById(R.id.drinkTags);
-            drinkDescription = (TextView) itemView.findViewById(R.id.drinkCategory);
-            drinkFirstBrewed = (TextView) itemView.findViewById(R.id.drinkGlass);
+            drinkTagline = (TextView) itemView.findViewById(R.id.drinkTagline);
+            drinkFirstBrewed = (TextView) itemView.findViewById(R.id.drinkFirstBrewed);
+            drinkDescription = (TextView) itemView.findViewById(R.id.drinkDescription);
+
 ;
             itemView.setOnClickListener(this);
         }

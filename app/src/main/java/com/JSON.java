@@ -62,10 +62,10 @@ public class JSON {
         return beersList;
     }
 
-    public static ArrayList<Beer> getCoctailListByName(ArrayList<Beer> coctailsList, String drinkName) {
+    public static ArrayList<Beer> getBeerListByName(ArrayList<Beer> beersList, String drinkName) {
         drinkName= drinkName.substring(0,1).toUpperCase() + drinkName.substring(1).toLowerCase();
         ArrayList<Beer> beerListByName = new ArrayList<Beer>();
-        for (Beer beer : coctailsList) {
+        for (Beer beer : beersList) {
             if (beer.getDrinkName().contains(drinkName)) {
                 beerListByName.add(beer);
             }

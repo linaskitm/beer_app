@@ -77,14 +77,14 @@ public class SearchActivity extends AppCompatActivity {
                 searchView.clearFocus();
             }
             // From all  list creates specific list by searched name
-            ArrayList<Beer> coctailListByName = JSON.getCoctailListByName(beerArrayList, query);
+            ArrayList<Beer> beerListByName = JSON.getBeerListByName(beerArrayList, query);
 
-            if (coctailListByName.size() == 0) {
+            if (beerListByName.size() == 0) {
                 Toast.makeText(this, getResources().getString(R.string.search_no_results) + query, Toast.LENGTH_SHORT).show();
             }
             // Setup and Handover data to recyclerview
             recyclerView = (RecyclerView) findViewById(R.id.beer_list);
-            adapter = new Adapter(SearchActivity.this, coctailListByName);
+            adapter = new Adapter(SearchActivity.this, beerListByName);
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
         }

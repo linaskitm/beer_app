@@ -15,12 +15,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static com.R.layout.activity_new_entry;
+
 public class NewEntryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_entry);
+        setContentView(activity_new_entry);
         setTitle("New Entry");
 
         Intent intent = getIntent();
@@ -28,15 +30,15 @@ public class NewEntryActivity extends AppCompatActivity {
         Toast.makeText(this, "Beers: " + beer.getDrinkName(), Toast.LENGTH_SHORT).show();
 
         // pasiimsim visus elementus is xml
-        final CheckBox checkBoxLithuania = findViewById(R.id.counrty_lithuania);
-        final CheckBox checkBoxLatvia = findViewById(R.id.counrty_latvia);
-        final CheckBox checkBoxEstonia = findViewById(R.id.counrty_estonia);
-        final CheckBox checkBoxPoland = findViewById(R.id.counrty_poland);
+        final CheckBox checkBoxLithuania = findViewById(R.id.beer_pilsner);
+        final CheckBox checkBoxLatvia = findViewById(R.id.beer_bohamian);
+        final CheckBox checkBoxEstonia = findViewById(R.id.beer_belgian);
+        final CheckBox checkBoxPoland = findViewById(R.id.beer_buzz);
 
         final RadioGroup radioGroup = findViewById(R.id.radio_group);
-        final RadioButton radio500 = findViewById(R.id.radio500);
+        final RadioButton radio500 = findViewById(R.id.radio2);
 
-        final Spinner spinner = findViewById(R.id.last_updated_id);
+        final Spinner spinner = findViewById(R.id.first_brewed_id);
         ArrayList <String> updateList = new ArrayList<String>();
         updateList.add(beer.getDrinkFirstBrewed());
         updateList.add(getResources().getString(R.string.new_entry_date1));
@@ -54,15 +56,15 @@ public class NewEntryActivity extends AppCompatActivity {
         //adapateri idedame-susiejame i spineri
         spinner.setAdapter(dataAdapter);
 
-        final EditText editTextConfirmed = findViewById(R.id.confirmed_input);
+        final EditText editTextDescription = findViewById(R.id.description_input);
 
         Button btnNewEntry = findViewById(R.id.new_entry_btn);
 
-        // uzpildysime visus elementus coronos informacija
+        // uzpildysime visus elementus alaus informacija
 
         checkBoxLithuania.setText(beer.getDrinkName());
-        radio500.setText(String.valueOf(beer.getDrinkTagline()));// konvertuojame int i string
-        editTextConfirmed.setText(String.valueOf(beer.getDrinkDescription()));
+        radio500.setText(beer.getDrinkTagline());
+        editTextDescription.setText(beer.getDrinkDescription());
 
         // ant mygtuko paspaudimo parodysime vartotojo ivesta- koreguota informacija
 
@@ -92,9 +94,9 @@ public class NewEntryActivity extends AppCompatActivity {
                 // spiineri first brewed
                 String drinkFirstBrewed = String.valueOf(spinner.getSelectedItem());
                 // is confirmed i description
-                String drinkDescription = editTextConfirmed.getText().toString();
+                String drinkDescription = editTextDescription.getText().toString();
 
-                editTextConfirmed.setError(null);
+                editTextDescription.setError(null);
 
 
                     Beer beer = new Beer(drinkFirstBrewed, beers, drinkDescription, drinkTagline);
